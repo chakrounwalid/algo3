@@ -1,0 +1,36 @@
+FUNCTION Dot_Product(V1,V2: ARRAY_OF Float[2]): Float
+VAR
+    ps: Float:=0
+    i: INTEGER
+
+BEGIN
+    read (V1);
+    read (V2);
+    FOR i FROM 0 TO V1.length-1  DO
+    ps:=ps+(V1[i]*V2[i])
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM Product
+VAR
+    v1, v2 : ARRAY_OF FLOAT;
+    i ,res: INTEGER
+BEGIN
+
+    REPEAT
+        read (n);
+    UNTIL ( (n >= 0) AND (n%2 =0))
+
+    FOR i FROM 0 TO n DO
+        read (v1);
+        read (v2);
+    END_FOR
+
+    res:= Dot_Product(v1,v2)
+    IF (res=0) THEN
+    write("les deux vecteurs sont orthogonaux")
+    ELSE
+    write ("les deux vecteurs non orthogonaux");
+    END_IF
+END
